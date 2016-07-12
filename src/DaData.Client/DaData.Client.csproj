@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30BEACDE-1B2A-498A-AA8C-5C56A92EAB51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DaData.Client</RootNamespace>
+    <AssemblyName>DaData.Client</AssemblyName>
+    <ReleaseVersion>1.0</ReleaseVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\output\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\output\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AddressData.cs" />
+    <Compile Include="Model\BankData.cs" />
+    <Compile Include="Model\BankNameData.cs" />
+    <Compile Include="Model\BankOpfData.cs" />
+    <Compile Include="Model\BankType.cs" />
+    <Compile Include="Model\ContentType.cs" />
+    <Compile Include="Model\EmailData.cs" />
+    <Compile Include="Model\FioData.cs" />
+    <Compile Include="Model\PartyBranchType.cs" />
+    <Compile Include="Model\PartyData.cs" />
+    <Compile Include="Model\PartyManagementData.cs" />
+    <Compile Include="Model\PartyNameData.cs" />
+    <Compile Include="Model\PartyOpfData.cs" />
+    <Compile Include="Model\PartyStateData.cs" />
+    <Compile Include="Model\PartyStatus.cs" />
+    <Compile Include="Model\PartyType.cs" />
+    <Compile Include="Model\SuggestAddressResponse.cs" />
+    <Compile Include="Model\SuggestBankResponse.cs" />
+    <Compile Include="Model\SuggestEmailResponse.cs" />
+    <Compile Include="Model\SuggestFioResponse.cs" />
+    <Compile Include="Model\Suggestion.cs" />
+    <Compile Include="Model\SuggestQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuggestClient.cs" />
+    <Compile Include="Model\SuggestPartyResponse.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

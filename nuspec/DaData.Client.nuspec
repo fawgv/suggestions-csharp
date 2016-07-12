@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>DaData.Client</id>
+        <version>0.1.1</version>
+        <authors>Quirco</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>DaData API Client Library</description>
+        <dependencies>
+            <dependency id="RestSharp" version="105.2.3" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\output\DaData.Client.dll" target="lib/net45" />        
+    </files>
+</package>
