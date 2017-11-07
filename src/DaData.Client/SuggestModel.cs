@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using RestSharp;
 
-namespace suggestionscsharp {
+namespace DaData.Client {
 
     public sealed class ContentType {
         readonly string name;
