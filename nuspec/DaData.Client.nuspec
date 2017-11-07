@@ -4,6 +4,7 @@
         <id>DaData.Client</id>
         <version>0.1.1</version>
         <authors>Quirco</authors>
+        <projectUrl>https://github.com/ZlobnyiSerg/suggestions-csharp</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>DaData API Client Library</description>
         <dependencies>
@@ -11,6 +12,6 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="..\output\DaData.Client.dll" target="lib/net45" />        
+        <file src="..\output\DaData.Client.dll" target="lib/net45\DaData.Client.dll" />
     </files>
 </package>

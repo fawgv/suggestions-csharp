@@ -21,13 +21,13 @@ API Подсказок DaData.ru для C# / .NET
 - [NUnit](http://www.nunit.org/) (для тестов)
 
 
-### 2. Получите API-ключи
+### 2. Получите API-ключ
 
-Зарегистрируйтесь на [dadata.ru](https://dadata.ru) и получите API-ключи в [личном кабинете](https://dadata.ru/profile/#info).
+Зарегистрируйтесь на [dadata.ru](https://dadata.ru) и получите API-ключ в [личном кабинете](https://dadata.ru/profile/#info).
 
 ### 3. Пользуйтесь API!
 
-Примеры вызова API можно посмотреть в юнит-тестах (`SuggestClientTest`) или ниже по тексту.
+Примеры вызова API смотрите в юнит-тестах (`SuggestClientTest`) или ниже по тексту.
 
 Использование
 ---------
@@ -41,12 +41,9 @@ API Подсказок DaData.ru для C# / .NET
 
 ```csharp
 var token = "ВАШ API-КЛЮЧ";
-// для бесплатных подсказок
-var url = "https://dadata.ru/api/v2";
-// для платных подсказок
-// var url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs"; 
+var url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs";
 var api = new SuggestClient(token, url);
 var query = "москва серпухов";
 var response = api.QueryAddress(query);
-Console.WriteLine(string.Join("\n", response.suggestionss));
+Console.WriteLine(string.Join("\n", response.suggestions));
 ```
