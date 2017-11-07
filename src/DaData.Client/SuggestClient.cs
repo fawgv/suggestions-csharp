@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Collections.Generic;
 using RestSharp;
 
 namespace DaData.Client {
@@ -13,22 +12,18 @@ namespace DaData.Client {
         const string FIO_RESOURCE = "fio";
         const string EMAIL_RESOURCE = "email";
 
-        RestClient client;
-        string token;
-        ContentType contentType = ContentType.JSON;
+        RestClient _client;
+        string _token;
+        ContentType _contentType = ContentType.JSON;
 
         public IWebProxy Proxy {
-            get { return client.Proxy; }
-            set { client.Proxy = value; }
-        }
-
-        static SuggestClient() {            
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
-        }
+            get { return _client.Proxy; }
+            set { _client.Proxy = value; }
+        }       
 
         public SuggestClient(string token, string baseUrl) {
-            this.token = token;
-            this.client = new RestClient (String.Format (SUGGESTIONS_URL, baseUrl));
+            _token = token;
+            _client = new RestClient (String.Format (SUGGESTIONS_URL, baseUrl));
         }
 
         public SuggestAddressResponse QueryAddress(string address) {
@@ -74,13 +69,13 @@ namespace DaData.Client {
         }
 
         private T Execute<T>(RestRequest request, SuggestQuery query) where T : new() {
-            request.AddHeader("Authorization", "Token " + this.token);
-            request.AddHeader("Content-Type", contentType.Name);
-            request.AddHeader("Accept", contentType.Name);
-            request.RequestFormat = contentType.Format;
-            request.XmlSerializer.ContentType = contentType.Name;
+            request.AddHeader("Authorization", "Token " + this._token);
+            request.AddHeader("Content-Type", _contentType.Name);
+            request.AddHeader("Accept", _contentType.Name);
+            request.RequestFormat = _contentType.Format;
+            request.XmlSerializer.ContentType = _contentType.Name;
             request.AddBody(query);
-            var response = client.Execute<T>(request);
+            var response = _client.Execute<T>(request);
 
             if (response.ErrorException != null) {
                 throw response.ErrorException;
