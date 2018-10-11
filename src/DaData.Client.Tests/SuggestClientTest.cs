@@ -12,7 +12,7 @@ namespace DaData.Client.Tests
         [SetUp]
         public void SetUp()
         {
-            var token = Environment.GetEnvironmentVariable("DADATA_API_KEY");
+            var token = "a1b4e47afc9b5f4fcbaf330b243c3ffed6551bac";
             var url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs";
             _api = new SuggestClient(token, url);
         }
@@ -25,7 +25,8 @@ namespace DaData.Client.Tests
             var address_data = response.suggestions[0].data;
             Assert.AreEqual("119034", address_data.postal_code);
             Assert.AreEqual("7704", address_data.tax_office);
-            Assert.AreEqual("Кропоткинская", address_data.metro[0].name);
+            if (address_data.metro != null)
+                Assert.AreEqual("Кропоткинская", address_data.metro[0].name);
             Console.WriteLine(string.Join("\n", response.suggestions));
         }
 
@@ -35,7 +36,7 @@ namespace DaData.Client.Tests
             var query = new AddressSuggestQuery("ватутина");
             var location = new AddressData();
             location.kladr_id = "65";
-            query.locations = new AddressData[] { location };
+            query.locations = new [] { location };
             var response = _api.QueryAddress(query);
             Assert.AreEqual("693022", response.suggestions[0].data.postal_code);
             Console.WriteLine(string.Join("\n", response.suggestions));
@@ -47,7 +48,7 @@ namespace DaData.Client.Tests
             var query = new AddressSuggestQuery("ватутина");
             var location = new AddressData();
             location.city_fias_id = "44388ad0-06aa-49b0-bbf9-1704629d1d68"; // Южно-Сахалинск
-            query.locations = new AddressData[] { location };
+            query.locations = new [] { location };
             var response = _api.QueryAddress(query);
             Assert.AreEqual("693022", response.suggestions[0].data.postal_code);
             Console.WriteLine(string.Join("\n", response.suggestions));
@@ -79,7 +80,7 @@ namespace DaData.Client.Tests
         public void SuggestBankStatusTest()
         {
             var query = new BankSuggestQuery("витас");
-            query.status = new PartyStatus[] { PartyStatus.LIQUIDATED };
+            query.status = new [] { PartyStatus.LIQUIDATED };
             var response = _api.QueryBank(query);
             Assert.AreEqual("044585398", response.suggestions[0].data.bic);
             Console.WriteLine(string.Join("\n", response.suggestions));
@@ -89,7 +90,7 @@ namespace DaData.Client.Tests
         public void SuggestBankTypeTest()
         {
             var query = new BankSuggestQuery("я");
-            query.type = new BankType[] { BankType.NKO };
+            query.type = new [] { BankType.NKO };
             var response = _api.QueryBank(query);
             Assert.AreEqual("044525444", response.suggestions[0].data.bic);
             Console.WriteLine(string.Join("\n", response.suggestions));
