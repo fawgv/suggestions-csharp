@@ -68,8 +68,7 @@ namespace DaData.Client {
             request.AddHeader("Content-Type", _contentType.Name);
             request.AddHeader("Accept", _contentType.Name);
             request.RequestFormat = _contentType.Format;
-            request.XmlSerializer.ContentType = _contentType.Name;
-            request.AddBody(query);
+            request.AddJsonBody(query);
             var response = _client.Execute<T>(request);
             
             if (response.StatusCode != HttpStatusCode.OK)

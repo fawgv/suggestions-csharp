@@ -2,14 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>DaData.Client</id>
-        <version>0.1.5</version>
+        <version>0.1.7</version>
         <authors>Quirco</authors>
         <projectUrl>https://github.com/ZlobnyiSerg/suggestions-csharp</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>DaData API Client Library</description>
         <dependencies>
-            <dependency id="RestSharp" version="106.5.0" />
+            <dependency id="RestSharp" version="106.6.10" />
         </dependencies>
+        <releaseNotes>RestSharp upgrade to version 106.6.10
+        </releaseNotes>
     </metadata>
     <files>
         <file src="..\output\DaData.Client.dll" target="lib/net45\DaData.Client.dll" />

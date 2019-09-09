@@ -26,7 +26,8 @@
       </e>
       <e p="suggestions-csharp.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\Sergio\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Sergio\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_suggestions-csharp.-1307253197.00" t="ExcludeRecursive" />
+    <e p="C:\Users\szhiz\.Rider2019.1\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\szhiz\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\szhiz\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_suggestions-csharp.-1307253197.00" t="ExcludeRecursive" />
   </component>
 </project>
