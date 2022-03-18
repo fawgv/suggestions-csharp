@@ -282,7 +282,8 @@ namespace DaData.Client {
     public enum PartyStatus {
         ACTIVE,
         LIQUIDATING,
-        LIQUIDATED
+        LIQUIDATED,
+        REORGANIZING
     }
 
     public enum PartyType {

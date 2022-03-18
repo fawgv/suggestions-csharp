@@ -139,6 +139,20 @@ namespace DaData.Client.Tests
         }
 
         [Test]
+        public void SuggestPartyTest2()
+        {
+            var query = "3662282264";
+            var response = _api.QueryParty(query);
+            var party = response.suggestions[0];
+            var address = response.suggestions[0].data.address;
+            Assert.AreEqual("3662282264", party.data.inn);
+            Assert.AreEqual("г Воронеж, ул Карпинского, д 39В, офис 9", address.value);
+            Assert.AreEqual("394049, ОБЛАСТЬ ВОРОНЕЖСКАЯ, Г. ВОРОНЕЖ, УЛ. КАРПИНСКОГО, Д. 39В, ОФИС 9", address.data.source);
+            Assert.AreEqual("394049", address.data.postal_code);
+            Console.WriteLine(string.Join("\n", response.suggestions));
+        }
+
+        [Test]
         public void SuggestPartyStatusTest()
         {
             var query = new PartySuggestQuery("витас");
